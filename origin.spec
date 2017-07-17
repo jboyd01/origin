@@ -21,12 +21,12 @@
 # %commit and %os_git_vars are intended to be set by tito custom builders provided
 # in the .tito/lib directory. The values in this spec file will not be kept up to date.
 %{!?commit:
-%global commit 9828acb60cd7d6ccb117973dd484277ff6632ce3
+%global commit 37d7e7a3257a9ebcf02d104d06e5f379f47ed6eb
 }
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 # os_git_vars needed to run hack scripts during rpm builds
 %{!?os_git_vars:
-%global os_git_vars OS_GIT_MINOR=6+ OS_GIT_TREE_STATE=clean OS_GIT_MAJOR=3 OS_GIT_COMMIT=9828acb OS_GIT_VERSION=v3.6.0-0.rc.0.6.d32dd09+9828acb
+%global os_git_vars OS_GIT_TREE_STATE=clean OS_GIT_MINOR=6+ OS_GIT_MAJOR=3 OS_GIT_COMMIT=37d7e7a OS_GIT_VERSION=v3.6.1-1.rc.1.d32dd09+37d7e7a
 }
 
 %if 0%{?fedora} || 0%{?epel}
@@ -52,7 +52,7 @@
 Name:           %{package_name}
 # Version is not kept up to date and is intended to be set by tito custom
 # builders provided in the .tito/lib directory of this project
-Version:        3.6.1
+Version:        3.6.2
 Release:        1.rc.1.d32dd09
 Summary:        Open Source Container Management by Red Hat
 License:        ASL 2.0
@@ -640,6 +640,9 @@ fi
 %{_bindir}/hyperkube
 
 %changelog
+* Mon Jul 17 2017 Jay Boyd <jaboyd@redhat.com> 3.6.2-1.rc.1.d32dd09
+- 
+
 * Mon Jul 17 2017 Jay Boyd <jaboyd@redhat.com> 3.6.1-1.rc.1.d32dd09
 - 
 
