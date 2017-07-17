@@ -21,12 +21,12 @@
 # %commit and %os_git_vars are intended to be set by tito custom builders provided
 # in the .tito/lib directory. The values in this spec file will not be kept up to date.
 %{!?commit:
-%global commit d32dd092770677760a4020d594357127346851d1
+%global commit 9828acb60cd7d6ccb117973dd484277ff6632ce3
 }
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 # os_git_vars needed to run hack scripts during rpm builds
 %{!?os_git_vars:
-%global os_git_vars OS_GIT_VERSION=v3.6.0-rc.0+d32dd09-6 OS_GIT_MINOR=6+ OS_GIT_MAJOR=3 OS_GIT_TREE_STATE=clean OS_GIT_COMMIT=d32dd09
+%global os_git_vars OS_GIT_MINOR=6+ OS_GIT_TREE_STATE=clean OS_GIT_MAJOR=3 OS_GIT_COMMIT=9828acb OS_GIT_VERSION=v3.6.0-0.rc.0.6.d32dd09+9828acb
 }
 
 %if 0%{?fedora} || 0%{?epel}
@@ -52,8 +52,8 @@
 Name:           %{package_name}
 # Version is not kept up to date and is intended to be set by tito custom
 # builders provided in the .tito/lib directory of this project
-Version:        3.6.0
-Release:        0.rc.0.6.d32dd09
+Version:        3.6.1
+Release:        1.rc.1.d32dd09
 Summary:        Open Source Container Management by Red Hat
 License:        ASL 2.0
 URL:            https://%{import_path}
@@ -640,6 +640,9 @@ fi
 %{_bindir}/hyperkube
 
 %changelog
+* Mon Jul 17 2017 Jay Boyd <jaboyd@redhat.com> 3.6.1-1.rc.1.d32dd09
+- 
+
 * Fri Sep 18 2015 Scott Dodson <sdodson@redhat.com> 0.2-9
 - Rename from openshift -> origin
 - Symlink /var/lib/origin to /var/lib/openshift if /var/lib/openshift exists
