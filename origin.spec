@@ -21,12 +21,12 @@
 # %commit and %os_git_vars are intended to be set by tito custom builders provided
 # in the .tito/lib directory. The values in this spec file will not be kept up to date.
 %{!?commit:
-%global commit 896298843345482bad3c2c86578c649f8f1c6fa3
+%global commit cb895243a036e331b0e209b6264394de6dd5c47f
 }
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 # os_git_vars needed to run hack scripts during rpm builds
 %{!?os_git_vars:
-%global os_git_vars OS_GIT_COMMIT=8962988433 OS_GIT_VERSION=v3.7.0-alpha.1+8962988-369 OS_GIT_MAJOR=3 OS_GIT_MINOR=7+ OS_GIT_TREE_STATE=clean
+%global os_git_vars OS_GIT_COMMIT=cb895243a0 OS_GIT_VERSION=v3.7.0-0.alpha.1.369.8962988+cb89524 OS_GIT_MAJOR=3 OS_GIT_MINOR=7+ OS_GIT_TREE_STATE=clean
 }
 
 %if 0%{?fedora} || 0%{?epel}
@@ -53,7 +53,7 @@ Name:           %{package_name}
 # Version is not kept up to date and is intended to be set by tito custom
 # builders provided in the .tito/lib directory of this project
 Version:        3.7.0
-Release:        0.alpha.1.369.8962988
+Release:        0.0.alpha.1.369.8962988.0.cb89524
 Summary:        Open Source Container Management by Red Hat
 License:        ASL 2.0
 URL:            https://%{import_path}
